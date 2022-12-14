@@ -6,7 +6,7 @@ import { IUserDatabase } from '../../modules/user/repositories/user.database.int
 import { AuthController } from './rest';
 import { AuthService } from './services';
 import { JwtStrategy } from '../../guards/jwt-strategy';
-import { authConfig } from 'config/auth';
+import { authConfig } from '../../config/auth';
 
 @Module({
   imports: [

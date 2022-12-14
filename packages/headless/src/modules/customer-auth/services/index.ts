@@ -1,7 +1,7 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { Helper } from '../../../helper/helper.interface';
-import { authConfig } from 'config/auth';
+import { authConfig } from '../../../config/auth';
 import { CustomerRepository } from '../../../modules/customer/repositories';
 import {
   CreateCustomerResponse,
@@ -29,7 +29,7 @@ import {
 import { JwtService } from '@nestjs/jwt';
 import { CustomerJwtPayload } from '../../../entity/customer-auth';
 import { Customer } from '../../../entity/customer';
-import { socialLoginConfig } from 'config/social-login';
+import { socialLoginConfig } from '../../../config/social-login';
 const FIVE_MINUTES = 5 * 60 * 1000;
 
 @Injectable()

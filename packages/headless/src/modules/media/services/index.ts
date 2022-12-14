@@ -1,5 +1,5 @@
 import { HttpStatus, Injectable } from '@nestjs/common';
-import { coreConfig } from 'config/core';
+import { coreConfig } from '../../../config/core';
 import {
   UploadFileErrorMessages,
   UploadFileResponse,

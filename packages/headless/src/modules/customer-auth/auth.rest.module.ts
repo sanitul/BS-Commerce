@@ -3,7 +3,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { ResolveDatabaseDependency } from '../../database/database.resolver';
 import { CustomerAuthController } from './rest';
 import { CustomerAuthService } from './services';
-import { authConfig } from 'config/auth';
+import { authConfig } from '../../config/auth';
 import { ICustomerDatabase } from '../customer/repositories/customer.database.interface';
 import { CustomerRepository } from '../customer/repositories';
 import { JwtStrategy } from '../../guards/jwt-strategy';

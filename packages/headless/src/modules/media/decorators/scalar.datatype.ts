@@ -1,6 +1,6 @@
 import { BadRequestException } from '@nestjs/common';
 import { Scalar } from '@nestjs/graphql';
-import { multerConfig } from 'config/multer';
+import { multerConfig } from '../../../config/multer';
 import { ValueNode } from 'graphql';
 
 @Scalar('Upload')

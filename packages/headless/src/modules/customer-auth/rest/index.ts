@@ -34,8 +34,8 @@ import {
   VerifyOtpErrorResponseDto,
   VerifyOtpSuccessResponseDto,
 } from './dto';
-import { authConfig } from 'config/auth';
-import { coreConfig } from 'config/core';
+import { authConfig } from '../../../config/auth';
+import { coreConfig } from '../../../config/core';
 import { AuthGuard } from '@nestjs/passport';
 
 @Controller('customer/auth')

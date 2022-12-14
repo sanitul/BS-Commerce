@@ -17,7 +17,7 @@ import {
   SignUpSuccessMessages,
   CreateUserRequest,
 } from '@bs-commerce/models';
-import { authConfig } from 'config/auth';
+import { authConfig } from '../../../config/auth';
 
 @Injectable()
 export class AuthService {

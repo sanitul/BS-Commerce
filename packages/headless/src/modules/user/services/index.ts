@@ -3,7 +3,7 @@ import { HttpStatus, Injectable } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { Helper } from '../../../helper/helper.interface';
 import { UserRepository } from '../repositories';
-import { authConfig } from 'config/auth';
+import { authConfig } from '../../../config/auth';
 import {
   GetUserResponse,
   UpdateUserResponse,

@@ -9,7 +9,7 @@ import {
   IsPhoneNumber,
   IsString,
 } from 'class-validator';
-import { regexConfig } from 'config/phone';
+import { regexConfig } from '../../../../config/phone';
 import { AddressDto, UserDto } from './user.dto';
 import { ValidateNested as CustomValidator } from '../../../../decorators/service.validator';
 import {

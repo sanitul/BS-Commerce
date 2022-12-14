@@ -1,6 +1,6 @@
 import { PassportStrategy } from '@nestjs/passport';
 import { Strategy, Profile } from 'passport-google-oauth20';
-import { socialLoginConfig } from 'config/social-login';
+import { socialLoginConfig } from '../config/social-login';
 import { Injectable } from '@nestjs/common';
 
 @Injectable()

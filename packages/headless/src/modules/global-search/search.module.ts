@@ -1,6 +1,6 @@
 import { Module, OnModuleInit } from '@nestjs/common';
 import { ElasticsearchModule } from '@nestjs/elasticsearch';
-import { searchConfig } from 'config/search';
+import { searchConfig } from '../../config/search';
 import { ProductSearchDatabase } from '../../database/mongodb/search';
 import { SearchController } from './rest';
 import { ElasticHelperService } from './services/elastic.helper';

@@ -1,6 +1,6 @@
 import { Field, InputType, Int, ObjectType } from '@nestjs/graphql';
 import { IsOptional, IsPhoneNumber } from 'class-validator';
-import { regexConfig } from 'config/phone';
+import { regexConfig } from '../../../config/phone';
 import { Address, User } from '@bs-commerce/models';
 
 @ObjectType('AdminAddress')

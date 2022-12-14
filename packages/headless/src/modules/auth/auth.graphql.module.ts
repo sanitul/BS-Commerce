@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { ResolveDatabaseDependency } from '../../database/database.resolver';
 import { AuthService } from './services';
-import { authConfig } from 'config/auth';
+import { authConfig } from '../../config/auth';
 import { AuthResolver } from './graphql/auth.resolver';
 import { UserRepository } from '../../modules/user/repositories';
 import { IUserDatabase } from '../../modules/user/repositories/user.database.interface';

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { ResolveDatabaseDependency } from '../../database/database.resolver';
 import { CustomerAuthService } from './services';
-import { authConfig } from 'config/auth';
+import { authConfig } from '../../config/auth';
 import { CustomerAuthResolver } from './graphql/auth.resolver';
 import { ICustomerDatabase } from '../customer/repositories/customer.database.interface';
 import { CustomerRepository } from '../customer/repositories';

@@ -1,7 +1,7 @@
 // Mongodb dependency implementations
 import { BrandDatabase as BrandDatabaseMongo } from './mongodb/brand';
 import { BrandDatabase as BrandDatabaseMysql } from './mysql/brand';
-import { dbConfig } from 'config/database';
+import { dbConfig } from '../config/database';
 import { CartDatabase as CartDatabaseMongo } from './mongodb/cart';
 import { CategoryDatabase as CategoryDatabaseMongo } from './mongodb/category';
 import { CompareDatabase as CompareDatabaseMongo } from './mongodb/compare/index';

@@ -1,4 +1,4 @@
-import { dbConfig } from 'config/database';
+import { dbConfig } from '../../config/database';
 import * as Mongoose from 'mongoose';
 
 export async function connect() {
