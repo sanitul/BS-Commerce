@@ -333,44 +333,44 @@ export class ProductService {
     const { skip, limit, slug, orderBy, maxPrice, minPrice } = condition;
     const query: Record<string, any> = this.generateSearchQuery(condition);
     console.log('error getCustomerProductsByCondition', dbConfig.mongodb.URI);
-    let products = null;
-    try {
-      products = slug
-        ? await this.productRepo.getAllConditionalProducts(
-            { ...query, 'info.published': true },
-            { maxPrice, minPrice },
-            slug,
-            orderBy,
-            skip,
-            limit,
-          )
-        : await this.productRepo.findAllProducts(
-            { ...query, 'info.published': true },
-            skip,
-            limit,
-            { maxPrice, minPrice },
-            orderBy,
-          );
-    } catch (error) {
-      console.log('error');
-      console.log(error);
-    }
-    // const products = slug
-    //   ? await this.productRepo.getAllConditionalProducts(
-    //       { ...query, 'info.published': true },
-    //       { maxPrice, minPrice },
-    //       slug,
-    //       orderBy,
-    //       skip,
-    //       limit,
-    //     )
-    //   : await this.productRepo.findAllProducts(
-    //       { ...query, 'info.published': true },
-    //       skip,
-    //       limit,
-    //       { maxPrice, minPrice },
-    //       orderBy,
-    //     );
+    // let products = null;
+    // try {
+    //   products = slug
+    //     ? await this.productRepo.getAllConditionalProducts(
+    //         { ...query, 'info.published': true },
+    //         { maxPrice, minPrice },
+    //         slug,
+    //         orderBy,
+    //         skip,
+    //         limit,
+    //       )
+    //     : await this.productRepo.findAllProducts(
+    //         { ...query, 'info.published': true },
+    //         skip,
+    //         limit,
+    //         { maxPrice, minPrice },
+    //         orderBy,
+    //       );
+    // } catch (error) {
+    //   console.log('error');
+    //   console.log(error);
+    // }
+    const products = slug
+      ? await this.productRepo.getAllConditionalProducts(
+          { ...query, 'info.published': true },
+          { maxPrice, minPrice },
+          slug,
+          orderBy,
+          skip,
+          limit,
+        )
+      : await this.productRepo.findAllProducts(
+          { ...query, 'info.published': true },
+          skip,
+          limit,
+          { maxPrice, minPrice },
+          orderBy,
+        );
     // console.log('products');
     const productsCount = slug
       ? await this.productRepo.getAllConditionalProducts(

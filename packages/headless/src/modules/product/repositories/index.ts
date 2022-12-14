@@ -34,6 +34,15 @@ export class ProductRepository {
     skip?: number,
     limit?: number,
   ): Promise<Product[]> {
+    console.log('getAllConditionalProducts');
+    this.db
+      .getAllConditionalProducts(query, price, slug, orderBy, skip, limit)
+      .then((data) => {
+        console.log('data');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     return await this.db.getAllConditionalProducts(
       query,
       price,
