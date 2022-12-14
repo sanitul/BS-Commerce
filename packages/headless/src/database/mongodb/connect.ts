@@ -2,6 +2,7 @@ import { dbConfig } from '../../config/database';
 import * as Mongoose from 'mongoose';
 
 export async function connect() {
+  console.log('dbConfig.mongodb.URI', dbConfig.mongodb.URI);
   await Mongoose.connect(dbConfig.mongodb.URI);
   const { connection } = Mongoose;
 
