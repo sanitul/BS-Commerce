@@ -331,6 +331,7 @@ export class ProductService {
   ): Promise<GetCustomerAllProductsResponse> {
     const { skip, limit, slug, orderBy, maxPrice, minPrice } = condition;
     const query: Record<string, any> = this.generateSearchQuery(condition);
+    console.log('error getCustomerProductsByCondition');
     const products = slug
       ? await this.productRepo.getAllConditionalProducts(
           { ...query, 'info.published': true },
@@ -347,6 +348,7 @@ export class ProductService {
           { maxPrice, minPrice },
           orderBy,
         );
+    console.log('products');
     const productsCount = slug
       ? await this.productRepo.getAllConditionalProducts(
           { ...query, 'info.published': true },
@@ -361,6 +363,7 @@ export class ProductService {
           { maxPrice, minPrice },
           orderBy,
         );
+    console.log('productsCount');
     if (!products)
       return this.helper.serviceResponse.errorResponse(
         GetProductsByConditionErrorMessages.CAN_NOT_GET_PRODUCTS,
