@@ -10,8 +10,10 @@ import { dbConfig } from './config/database';
 import { coreConfig } from './config/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
-import cookieParser from 'cookie-parser';
+
 import { SwaggerConfig } from './internal/swagger/swagger.init';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const cookieParser = require('cookie-parser');
 
 async function bootstrap() {
   await connectToDatabase(dbConfig.db as DB);
