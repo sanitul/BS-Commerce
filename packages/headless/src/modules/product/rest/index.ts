@@ -82,6 +82,7 @@ export class ProductController {
     @Query() condition: GetCustomerAllProductsQueryDto,
     @Res({ passthrough: true }) res: Response,
   ) {
+    console.log('sanid');
     const { code, ...response } =
       await this.productService.getCustomerProductsByCondition(condition);
     res.status(code);
@@ -124,6 +125,7 @@ export class ProductController {
     @Param() params: GetCustomerProductParamsDto,
     @Res({ passthrough: true }) res: Response,
   ) {
+    console.log('sanid');
     const { code, ...response } = await this.productService.getCustomerProduct(
       params.productId,
     );
