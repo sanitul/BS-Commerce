@@ -53,9 +53,11 @@ export class ProductDatabase implements IProductDatabase {
     skip?: number,
     limit?: number,
   ): Promise<Product[] | []> {
+    console.log('Hiii');
     const categories = await CategoryModel.find({
       $or: [{ slug: slug }, { 'ancestors.slug': slug }],
     }).lean();
+    console.log('Hiii problem');
     const categoryIdList =
       categories &&
       categories.length &&
