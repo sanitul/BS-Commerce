@@ -82,7 +82,13 @@ export class ProductController {
     @Query() condition: GetCustomerAllProductsQueryDto,
     @Res({ passthrough: true }) res: Response,
   ) {
-    console.log('sanid');
+    try {
+      const { code, ...response } =
+        await this.productService.getCustomerProductsByCondition(condition);
+      // res.status(code);
+    } catch (error) {
+      console.log('error', error);
+    }
     const { code, ...response } =
       await this.productService.getCustomerProductsByCondition(condition);
     res.status(code);
