@@ -54,6 +54,23 @@ export class ProductDatabase implements IProductDatabase {
     limit?: number,
   ): Promise<Product[] | []> {
     console.log('Hiii');
+    CategoryModel.find({
+      $or: [{ slug: slug }, { 'ancestors.slug': slug }],
+    })
+      .lean()
+      .then((data) => {
+        console.log('data');
+      })
+      .catch((error) => {
+        console.log('eee');
+      });
+    try {
+      const categories = await CategoryModel.find({
+        $or: [{ slug: slug }, { 'ancestors.slug': slug }],
+      }).lean();
+    } catch (error) {
+      console.log('big error');
+    }
     const categories = await CategoryModel.find({
       $or: [{ slug: slug }, { 'ancestors.slug': slug }],
     }).lean();
