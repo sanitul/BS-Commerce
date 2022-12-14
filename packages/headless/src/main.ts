@@ -11,6 +11,7 @@ import { coreConfig } from './config/core';
 import { NestExpressApplication } from '@nestjs/platform-express';
 import { join } from 'path';
 import cookieParser from 'cookie-parser';
+import { SwaggerConfig } from './internal/swagger/swagger.init';
 
 async function bootstrap() {
   await connectToDatabase(dbConfig.db as DB);
@@ -29,6 +30,7 @@ async function bootstrap() {
     app.use(graphqlUploadExpress({ maxFileSize: multerConfig.maxFileSize }));
   app.useGlobalPipes(new ValidationPipe());
   app.use(cookieParser());
+  coreConfig.api === 'REST' && SwaggerConfig(app);
   await app.listen(coreConfig.port);
   console.log(`http://${coreConfig.host}:${coreConfig.port}`);
 }
